@@ -1,0 +1,15 @@
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\bin\Debug\net8.0\Session_03_Assignment.exe
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\bin\Debug\net8.0\Session_03_Assignment.deps.json
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\bin\Debug\net8.0\Session_03_Assignment.runtimeconfig.json
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\bin\Debug\net8.0\Session_03_Assignment.dll
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\bin\Debug\net8.0\Session_03_Assignment.pdb
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\Session_03_Assignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\Session_03_Assignment.AssemblyInfoInputs.cache
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\Session_03_Assignment.AssemblyInfo.cs
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\Session_03_Assignment.csproj.CoreCompileInputs.cache
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\Session_03_Assignment.sourcelink.json
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\Session_03_Assignment.dll
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\refint\Session_03_Assignment.dll
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\Session_03_Assignment.pdb
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\Session_03_Assignment.genruntimeconfig.cache
+C:\Users\Aliaa Osama\Desktop\ASP.NET-Diploma\C#\Session_03\Session_03_Assignment\obj\Debug\net8.0\ref\Session_03_Assignment.dll

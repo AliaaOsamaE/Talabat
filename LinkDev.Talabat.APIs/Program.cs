@@ -35,7 +35,6 @@ namespace LinkDev.Talabat.APIs
             #endregion
 
             app.Run();
-
         }
     }
 }

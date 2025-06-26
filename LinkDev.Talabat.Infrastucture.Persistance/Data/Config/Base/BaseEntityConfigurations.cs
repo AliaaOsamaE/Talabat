@@ -1,5 +1,5 @@
 ﻿
-namespace LinkDev.Talabat.Infrastucture.Persistance.Data.Config.Base
+namespace LinkDev.Talabat.Infrastructure.Persistence.Data.Config.Base
 {
     public class BaseEntityConfigurations<TEntity,TKey> :
         IEntityTypeConfiguration<TEntity>

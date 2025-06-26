@@ -1,5 +1,6 @@
 
-using LinkDev.Talabat.Infrastucture.Persistance;
+using LinkDev.Talabat.Infrasteucture.Persistence;
+using LinkDev.Talabat.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace LinkDev.Talabat.APIs
@@ -9,6 +10,7 @@ namespace LinkDev.Talabat.APIs
         // Entry Point
         public static void Main(string[] args)
         {
+            
             var builder = WebApplication.CreateBuilder(args);
 
             #region Configure Services

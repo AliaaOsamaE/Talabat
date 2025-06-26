@@ -1,6 +1,4 @@
-﻿
-
-namespace LinkDev.Talabat.Infrastucture.Persistance
+﻿namespace LinkDev.Talabat.Infrastructure.Persistence
 {
     public static class DependencyInjection
     {

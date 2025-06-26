@@ -1,7 +1,4 @@
-﻿using LinkDev.Talabat.Domain.Entities.Products;
-using Microsoft.EntityFrameworkCore;
-
-namespace LinkDev.Talabat.Infrastucture.Persistance
+﻿namespace LinkDev.Talabat.Infrasteucture.Persistence
 {
     public class StoreContext : DbContext
     {
@@ -9,9 +6,12 @@ namespace LinkDev.Talabat.Infrastucture.Persistance
         {
             
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AssemblyInformation).Assembly);
 
-
-
+        }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductBrand> Brands { get; set; }
         public DbSet<ProductCategory> Categories { get; set; }

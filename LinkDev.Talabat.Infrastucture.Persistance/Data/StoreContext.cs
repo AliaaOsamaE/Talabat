@@ -1,15 +1,15 @@
-﻿namespace LinkDev.Talabat.Infrasteucture.Persistence
+﻿namespace LinkDev.Talabat.Infrastructure.Persistence.Data
 {
     public class StoreContext : DbContext
     {
         //public StoreContext()
         //{
-            
+
         //}
 
-        public StoreContext(DbContextOptions<StoreContext> options) :base(options)
+        public StoreContext(DbContextOptions<StoreContext> options) : base(options)
         {
-            
+
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

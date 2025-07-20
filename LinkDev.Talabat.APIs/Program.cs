@@ -1,11 +1,6 @@
 
 using LinkDev.Talabat.APIs.Extensions;
-using LinkDev.Talabat.Domain.Contracts;
-using LinkDev.Talabat.Infrasteucture.Persistence;
 using LinkDev.Talabat.Infrastructure.Persistence;
-using LinkDev.Talabat.Infrastructure.Persistence.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace LinkDev.Talabat.APIs
 {

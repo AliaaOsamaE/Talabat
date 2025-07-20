@@ -1,4 +1,7 @@
-﻿namespace LinkDev.Talabat.Infrastructure.Persistence
+﻿
+using LinkDev.Talabat.Infrastructure.Persistence.Data;
+
+namespace LinkDev.Talabat.Infrastructure.Persistence
 {
     public static class DependencyInjection
     {
@@ -12,6 +15,8 @@
                  /*,ServiceLifetime.Scoped, 
                   * ServiceLifetime.Scoped*/
                  );
+            // services.AddScoped<IStoreContextInitializer,StoreContextInitializer>();
+            services.AddScoped(typeof(IStoreContextInitializer), typeof(StoreContextInitializer));
             return services;
         }
     }

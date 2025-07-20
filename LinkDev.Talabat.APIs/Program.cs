@@ -1,4 +1,6 @@
 
+using LinkDev.Talabat.APIs.Extensions;
+using LinkDev.Talabat.Domain.Contracts;
 using LinkDev.Talabat.Infrasteucture.Persistence;
 using LinkDev.Talabat.Infrastructure.Persistence;
 using LinkDev.Talabat.Infrastructure.Persistence.Data;
@@ -78,35 +80,45 @@ namespace LinkDev.Talabat.APIs
 
 
             #region ASK Runtime Env for an object from "StoreContext" service Explicitly
-            using var scope = app.Services.CreateAsyncScope(); // Create a new scope for dependency injection 
-            var Services = scope.ServiceProvider; // Get the service provider from the scope
-            var storeContext = Services.GetRequiredService<StoreContext>(); // Get the StoreContext service from the service provider
-            var ILoggerFactory = Services.GetRequiredService<ILoggerFactory>();
-           // var logger = Services.GetRequiredService<ILogger<Program>>();
+            // using var scope = app.Services.CreateAsyncScope(); // Create a new scope for dependency injection 
+            // var Services = scope.ServiceProvider; // Get the service provider from the scope
+            //                                       // var storeContext = Services.GetRequiredService<StoreContext>(); // Get the StoreContext service from the service provider
+            // var storeContextInitializer = Services.GetRequiredService<IStoreContextInitializer>();
+            // var ILoggerFactory = Services.GetRequiredService<ILoggerFactory>();
+            //// var logger = Services.GetRequiredService<ILogger<Program>>();
             #endregion
 
-            try
-            {
-                // This condition is checked here because GetPendingMigration has lower time cost than Migrate
-                var pendingMigrations = storeContext.Database.GetPendingMigrations();
-                if (pendingMigrations.Any())
-                {
-                    await storeContext.Database.MigrateAsync(); // Update-Database
-                }
-
-                await StoreContextSeed.SeedAsync(storeContext); // Data Seeding
-               
-            }
-            catch(Exception ex)
-            {
-                var logger = ILoggerFactory.CreateLogger<Program>();
-                logger.LogError(ex, "An error has been occured during applying migrations or seeding data");
-            }
-            //finally
+            //try
             //{
-            //   // await storeContext.DisposeAsync();
-            //   // await scope.DisposeAsync(); // Dispose the scope to release the resources
+            //    // This condition is checked here because GetPendingMigration has lower time cost than Migrate
+            //    //var pendingMigrations = storeContext.Database.GetPendingMigrations();
+            //    //if (pendingMigrations.Any())
+            //    //{
+            //    //    await storeContext.Database.MigrateAsync(); // Update-Database
+            //    //}
+            //    //await StoreContextSeed.SeedAsync(storeContext); // Data Seeding
+
+            //    await storeContextInitializer.InitializeAsync();
+
+            //    await storeContextInitializer.SeedAsync();
+
+
+
+
             //}
+            //catch (Exception ex)
+            //{
+            //    var logger = ILoggerFactory.CreateLogger<Program>();
+            //    logger.LogError(ex, "An error has been occured during applying migrations or seeding data");
+            //}
+            ////finally
+            ////{
+            ////   // await storeContext.DisposeAsync();
+            ////   // await scope.DisposeAsync(); // Dispose the scope to release the resources
+            ////}
+            ///
+
+            await app.InitializeStoreContextAsync();
 
             #endregion
 

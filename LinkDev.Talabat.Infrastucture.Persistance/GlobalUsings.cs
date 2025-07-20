@@ -7,3 +7,4 @@ global using LinkDev.Talabat.Domain.Entities.Products;
 global using LinkDev.Talabat.Infrastructure.Persistence.Data.Config.Base;
 global using LinkDev.Talabat.Infrasteucture.Persistence;
 global using LinkDev.Talabat.Infrastructure.Persistence;
+global using LinkDev.Talabat.Domain.Contracts;

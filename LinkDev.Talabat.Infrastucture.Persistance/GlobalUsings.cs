@@ -5,5 +5,4 @@ global using LinkDev.Talabat.Domain.Common;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using LinkDev.Talabat.Domain.Entities.Products;
 global using LinkDev.Talabat.Infrastructure.Persistence.Data.Config.Base;
-global using LinkDev.Talabat.Infrastructure.Persistence;
 global using LinkDev.Talabat.Domain.Contracts;

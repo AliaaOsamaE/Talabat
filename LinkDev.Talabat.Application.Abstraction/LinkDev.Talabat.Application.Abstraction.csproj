@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LinkDev.Talabat.Domain\LinkDev.Talabat.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

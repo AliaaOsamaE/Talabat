@@ -27,18 +27,16 @@ namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
          }
         */
 
-    public async Task<TEntity?> GetAsync(TKey id)
-          =>  await _storeContext.Set<TEntity>().FindAsync(id);
+        public async Task<TEntity?> GetAsync(TKey id)
+              =>  await _storeContext.Set<TEntity>().FindAsync(id);
         
         public async Task AddAsync(TEntity entity)
-         => await _storeContext.Set<TEntity>().AddAsync(entity);
+             => await _storeContext.Set<TEntity>().AddAsync(entity);
 
         public void  Update(TEntity entity)
-         =>  _storeContext.Set<TEntity>().Update(entity);
+             =>  _storeContext.Set<TEntity>().Update(entity);
 
         public void  Delete(TEntity entity)
-          =>  _storeContext.Set<TEntity>().Remove(entity);
-
-
+              =>  _storeContext.Set<TEntity>().Remove(entity);
     }
 }

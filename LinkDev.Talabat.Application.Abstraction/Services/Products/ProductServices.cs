@@ -1,4 +1,5 @@
-﻿using LinkDev.Talabat.Core.Application.Abstraction.Models.Products;
+﻿using AutoMapper;
+using LinkDev.Talabat.Core.Application.Abstraction.Models.Products;
 using LinkDev.Talabat.Domain.Contracts;
 using LinkDev.Talabat.Domain.Entities.Products;
 
@@ -7,9 +8,12 @@ namespace LinkDev.Talabat.Application.Abstraction.Services.Products
     internal class ProductServices : IProductService
     {
         private readonly IUnitOfWork unitOfWork;
-        public ProductServices(IUnitOfWork unitOfWork)
+        private readonly IMapper mapper;
+
+        public ProductServices(IUnitOfWork unitOfWork,IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
+            this.mapper = mapper;
         }
         public async Task<IEnumerable<ProductToReturnDto>> GetProductsAsync()
         {

@@ -3,7 +3,7 @@ using LinkDev.Talabat.Domain.Contracts;
 
 namespace LinkDev.Talabat.Application.Abstraction.Services
 {
-    internal class ServiceManager:IServiceManager
+    public class ServiceManager:IServiceManager
     {
         private readonly Lazy<ProductServices> _productService;
         private readonly IUnitOfWork _unitOfWork;

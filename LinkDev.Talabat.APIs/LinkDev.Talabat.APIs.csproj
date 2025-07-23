@@ -19,4 +19,8 @@
     <ProjectReference Include="..\LinkDev.Talabat.Infrastucture.Persistance\LinkDev.Talabat.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\products\" />
+  </ItemGroup>
+
 </Project>

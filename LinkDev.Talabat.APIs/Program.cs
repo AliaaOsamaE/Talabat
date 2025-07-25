@@ -1,5 +1,6 @@
 
 using LinkDev.Talabat.APIs.Extensions;
+using LinkDev.Talabat.Application;
 using LinkDev.Talabat.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,6 +58,7 @@ namespace LinkDev.Talabat.APIs
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddPersistanceServices(builder.Configuration);
+            builder.Services.AddApplicationServices();
             #endregion
 
             var app = builder.Build();

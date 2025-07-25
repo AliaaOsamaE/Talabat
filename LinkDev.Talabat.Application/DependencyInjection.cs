@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
 using LinkDev.Talabat.Application.Abstraction.Services;
 using LinkDev.Talabat.Application.Mapping;
+using LinkDev.Talabat.Infrastructure.Persistence.Data;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Proxies;
+using Microsoft.EntityFrameworkCore;
 
 namespace LinkDev.Talabat.Application
 {
@@ -14,6 +12,11 @@ namespace LinkDev.Talabat.Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddDbContext<StoreContext>(options =>
+            {
+                options.UseLazyLoadingProxies();
+            });
+
             services.AddAutoMapper(Mapper => Mapper.AddProfile(new MappingProfile()));
             //services.AddAutoMapper(Mapper => Mapper.AddProfile<MappingProfile>()));
             //services.AddAutoMapper(typeof(MappingProfile());

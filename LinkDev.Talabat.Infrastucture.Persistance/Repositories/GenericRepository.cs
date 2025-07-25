@@ -17,9 +17,18 @@ namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
             _storeContext = storeContext;
         }
         public async Task<IEnumerable<TEntity>> GetAllAsync(bool withTracking = false)
+        {
+            if(typeof(TEntity) == typeof(Product))
+            {
+                return withTracking ?
+                    (IEnumerable<TEntity>)await _storeContext.Set<Product>().Include(P => P.Brand).Include(P => P.Category).ToListAsync() :
+                    (IEnumerable<TEntity>)await _storeContext.Set<Product>().Include(P => P.Brand).Include(P => P.Category).AsNoTracking().ToListAsync();
+            }
 
-            => withTracking? await _storeContext.Set<TEntity>().ToListAsync()
-            : await _storeContext.Set<TEntity>().AsNoTracking().ToListAsync();
+            return  withTracking?
+            await _storeContext.Set<TEntity>().ToListAsync() : 
+            await _storeContext.Set<TEntity>().AsNoTracking().ToListAsync();
+        }
         /*
          {
             if (withTracking) return await _storeContext.Set<TEntity>().ToListAsync();

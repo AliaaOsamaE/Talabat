@@ -27,14 +27,7 @@ namespace LinkDev.Talabat.APIs.Controller.Controllers.Products
 
 
 
-        //#region GetProduct
-        //[HttpGet] //Get: /api/products/{id}
-        //public async Task<ActionResult<ProductToReturnDto>> GetProductById(int id)
-        //{
-        //    var product = await serviceManager.ProductService.GetProductAsync(id);
-        //    return Ok(product);
-        //}
-        //#endregion
+
 
 
     }

@@ -1,6 +1,7 @@
 
 using LinkDev.Talabat.APIs.Extensions;
 using LinkDev.Talabat.Infrastructure.Persistence;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LinkDev.Talabat.APIs
 {
@@ -48,7 +49,8 @@ namespace LinkDev.Talabat.APIs
             #region Configure Services
 
             // Add services to the container.
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddApplicationPart(typeof(Controller.Controllers.AssemblyInformation).Assembly);
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

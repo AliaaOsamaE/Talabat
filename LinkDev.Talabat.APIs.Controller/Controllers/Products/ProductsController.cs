@@ -15,7 +15,6 @@ namespace LinkDev.Talabat.APIs.Controller.Controllers.Products
         }
 
 
-
         #region GetProducts
         [HttpGet] //Get: /api/products
         public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProducts()
@@ -25,8 +24,41 @@ namespace LinkDev.Talabat.APIs.Controller.Controllers.Products
         }
         #endregion
 
+        #region GetProductById
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
+        {
+            var product = await serviceManager.ProductService.GetProductAsync(id);
+            if (product == null)
+            {
+                return NotFound(new { statusCode = 404, message = "not found" });
+            }
+            return Ok(product);
+        }
+        #endregion
 
+        #region GetBrands
 
+        [HttpGet("brands")]
+        public async Task<ActionResult<IEnumerable<BrandDto>>> GetBrands()
+        {
+            var brands = await serviceManager.ProductService.GetBrandsAsync();
+
+            return Ok(brands);
+        }
+        #endregion
+
+        #region GetCategories
+
+        [HttpGet("categories")]
+        public async Task<ActionResult<IEnumerable<CategoryDto>>> GetCategories()
+        {
+            var categories = await serviceManager.ProductService.GetCategoriesAsync();
+
+            return Ok(categories);
+        }
+
+        #endregion
 
 
 

@@ -2,6 +2,8 @@
 using LinkDev.Talabat.Core.Application.Abstraction.Models.Products;
 using LinkDev.Talabat.Domain.Contracts.Persistence;
 using LinkDev.Talabat.Domain.Entities.Products;
+using LinkDev.Talabat.Domain.Specifications;
+using LinkDev.Talabat.Domain.Specifications.Products;
 
 namespace LinkDev.Talabat.Application.Abstraction.Services.Products
 {
@@ -17,41 +19,22 @@ namespace LinkDev.Talabat.Application.Abstraction.Services.Products
         }
         public async Task<IEnumerable<ProductToReturnDto>> GetProductsAsync()
         {
-            
-            var products = await unitOfWork.GetRepository<Product, int>().GetAllAsync();
 
-            var productsToReturn = products.Select(p => new ProductToReturnDto
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Description = p.Description,
-                PictureUrl = p.PictureUrl,
-                Price = p.Price,
-                BrandId = p.BrandId,
-                Brand = p.Brand?.Name,  
-                CategoryId = p.CategoryId,
-                Category = p.Category?.Name,
-            });
+            var specs = new ProductWithBrandAndCategorySpecifications();
+
+            var products = await unitOfWork.GetRepository<Product, int>().GetAllWithSpecAsync(specs);
+
+            var productsToReturn = mapper.Map<IEnumerable<ProductToReturnDto>>(products);
 
             return productsToReturn;
         }
         public async Task<ProductToReturnDto> GetProductAsync(int id)
         {
-            var product = await unitOfWork.GetRepository<Product, int>().GetAsync(id);
+            var specs = new ProductWithBrandAndCategorySpecifications(id);
+            var product = await unitOfWork.GetRepository<Product, int>().GetWithSpecAsync(specs);
             if(product is null)  return null;
 
-            var productToReturn =  new ProductToReturnDto
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Description = product.Description,
-                PictureUrl = product.PictureUrl,
-                Price = product.Price,
-                BrandId = product.BrandId,
-                Brand = product.Brand?.Name,
-                CategoryId = product.CategoryId,
-                Category = product.Category?.Name
-            };
+            var productToReturn = mapper.Map<ProductToReturnDto>(product);
 
             return productToReturn;
         }
@@ -59,11 +42,7 @@ namespace LinkDev.Talabat.Application.Abstraction.Services.Products
         {
             var brands = await unitOfWork.GetRepository<ProductBrand, int>().GetAllAsync();
 
-            var brandsToReturn  = brands.Select(b => new BrandDto
-            {
-                Id = b.Id,
-                Name = b.Name
-            });
+            var brandsToReturn = mapper.Map<IEnumerable<BrandDto>> (brands);
 
             return brandsToReturn;
         }
@@ -71,11 +50,7 @@ namespace LinkDev.Talabat.Application.Abstraction.Services.Products
         {
             var categories = await unitOfWork.GetRepository<ProductCategory, int>().GetAllAsync();
 
-            var categoriesToReturn  = categories.Select(c => new CategoryDto
-            {
-                Id = c.Id,
-                Name = c.Name
-            });
+            var categoriesToReturn = mapper.Map<IEnumerable<CategoryDto>>(categories);
 
             return categoriesToReturn;
         }

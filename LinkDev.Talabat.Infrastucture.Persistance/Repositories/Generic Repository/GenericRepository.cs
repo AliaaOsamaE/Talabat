@@ -1,5 +1,6 @@
 ﻿using LinkDev.Talabat.Domain.Contracts.Persistence;
 using LinkDev.Talabat.Infrastructure.Persistence.Data;
+using LinkDev.Talabat.Infrastructure.Persistence.Repositories.Generic_Repository;
 
 namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
 {
@@ -12,6 +13,8 @@ namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
         {
             _storeContext = storeContext;
         }
+
+
         public async Task<IEnumerable<TEntity>> GetAllAsync(bool withTracking = false)
         {
             if(typeof(TEntity) == typeof(Product))
@@ -24,17 +27,28 @@ namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
             return  withTracking?
             await _storeContext.Set<TEntity>().ToListAsync() : 
             await _storeContext.Set<TEntity>().AsNoTracking().ToListAsync();
+
+            /*
+            {
+               if (withTracking) return await _storeContext.Set<TEntity>().ToListAsync();
+               return await _storeContext.Set<TEntity>().AsNoTracking().ToListAsync();
+            }
+           */
         }
-        /*
-         {
-            if (withTracking) return await _storeContext.Set<TEntity>().ToListAsync();
-            return await _storeContext.Set<TEntity>().AsNoTracking().ToListAsync();
-         }
-        */
+
 
         public async Task<TEntity?> GetAsync(TKey id)
               =>  await _storeContext.Set<TEntity>().FindAsync(id);
-        
+        public async Task<IEnumerable<TEntity>> GetAllWithSpecAsync(ISpecifications<TEntity, TKey> spec, bool withTracking = false)
+        {
+            return await ApplySpecifications(spec).ToListAsync();
+        }
+
+        public async Task<TEntity?> GetWithSpecAsync(ISpecifications<TEntity, TKey> spec)
+        {
+            return await ApplySpecifications(spec).FirstOrDefaultAsync();
+
+        }
         public async Task AddAsync(TEntity entity)
              => await _storeContext.Set<TEntity>().AddAsync(entity);
 
@@ -43,5 +57,15 @@ namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
 
         public void  Delete(TEntity entity)
               =>  _storeContext.Set<TEntity>().Remove(entity);
+
+   
+
+
+        #region Helpers
+        private IQueryable<TEntity> ApplySpecifications(ISpecifications<TEntity, TKey> spec)
+        {
+            return SpecificationsEvaluator<TEntity, TKey>.GetQuery(_storeContext.Set<TEntity>(), spec);
+        }
+        #endregion
     }
 }

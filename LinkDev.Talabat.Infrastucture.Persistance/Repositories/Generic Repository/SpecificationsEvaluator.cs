@@ -1,6 +1,6 @@
 ﻿namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories.Generic_Repository
 {
-    internal static class SpecificationEvaluator <TEntity,TKey>
+    internal static class SpecificationsEvaluator <TEntity,TKey>
          where TEntity : BaseEntity<TKey>
         where TKey : IEquatable<TKey>
     {

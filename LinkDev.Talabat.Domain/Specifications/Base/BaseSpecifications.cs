@@ -1,9 +1,9 @@
 ﻿using LinkDev.Talabat.Domain.Contracts;
 using System.Linq.Expressions;
 
-namespace LinkDev.Talabat.Domain.Specifications
+namespace LinkDev.Talabat.Domain.Specifications.Base
 {
-    internal class BaseSpecifications<TEntity, TKey> : ISpecifications<TEntity, TKey>
+    public class BaseSpecifications<TEntity, TKey> : ISpecifications<TEntity, TKey>
         where TEntity : BaseEntity<TKey>
         where TKey : IEquatable<TKey>
     {
@@ -20,7 +20,11 @@ namespace LinkDev.Talabat.Domain.Specifications
             Criteria = Entity => Entity.Id.Equals(id);
         }
 
+        #region Helper Methods
+        private protected virtual void AddIncludes()
+        {
+        }
+        #endregion
 
-    
     }
 }

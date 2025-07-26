@@ -1,4 +1,4 @@
-﻿using LinkDev.Talabat.Domain.Contracts;
+﻿using LinkDev.Talabat.Domain.Contracts.Persistence;
 using System.Text.Json;
 
 namespace LinkDev.Talabat.Infrastructure.Persistence.Data

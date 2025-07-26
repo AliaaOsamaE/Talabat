@@ -1,9 +1,5 @@
-﻿using LinkDev.Talabat.Infrastructure.Persistence.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LinkDev.Talabat.Domain.Contracts.Persistence;
+using LinkDev.Talabat.Infrastructure.Persistence.Data;
 
 namespace LinkDev.Talabat.Infrastructure.Persistence.Repositories
 {

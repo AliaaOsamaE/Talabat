@@ -1,4 +1,5 @@
 ﻿
+using LinkDev.Talabat.Domain.Contracts.Persistence;
 using LinkDev.Talabat.Infrastructure.Persistence.Data;
 
 namespace LinkDev.Talabat.Infrastructure.Persistence

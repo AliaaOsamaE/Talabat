@@ -1,4 +1,5 @@
-﻿using LinkDev.Talabat.Infrastructure.Persistence.Data;
+﻿using LinkDev.Talabat.Domain.Contracts.Persistence;
+using LinkDev.Talabat.Infrastructure.Persistence.Data;
 using LinkDev.Talabat.Infrastructure.Persistence.Repositories;
 using System.Collections.Concurrent;
 

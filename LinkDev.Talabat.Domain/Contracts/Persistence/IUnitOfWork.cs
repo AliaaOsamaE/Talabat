@@ -1,6 +1,6 @@
 ﻿using LinkDev.Talabat.Domain.Entities.Products;
 
-namespace LinkDev.Talabat.Domain.Contracts
+namespace LinkDev.Talabat.Domain.Contracts.Persistence
 {
     public interface IUnitOfWork : IAsyncDisposable
     {
@@ -12,6 +12,6 @@ namespace LinkDev.Talabat.Domain.Contracts
         where TEntity : BaseEntity<TKey>
         where TKey : IEquatable<TKey>;
 
-        Task<int> CompleteAsync(); 
+        Task<int> CompleteAsync();
     }
 }

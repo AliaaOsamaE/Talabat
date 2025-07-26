@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using LinkDev.Talabat.Application.Abstraction.Services.Products;
-using LinkDev.Talabat.Domain.Contracts;
+using LinkDev.Talabat.Domain.Contracts.Persistence;
 
 namespace LinkDev.Talabat.Application.Abstraction.Services
 {

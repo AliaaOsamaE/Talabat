@@ -7,12 +7,17 @@ namespace LinkDev.Talabat.Domain.Specifications.Products
     public class ProductWithBrandAndCategorySpecifications : BaseSpecifications<Product,int>
     {
 
-        public ProductWithBrandAndCategorySpecifications(string sort)
-            : base()
+        public ProductWithBrandAndCategorySpecifications(string? sort, int? brandId, int? categoryId)
+            : base( P =>
+
+                  (!brandId.HasValue ||  P.BrandId == brandId.Value) && 
+                  (!categoryId.HasValue || P.CategoryId == categoryId.Value)
+                  
+                  )
         {
             AddIncludes();
             AddSorting(sort);
-           
+       
         }
 
         public ProductWithBrandAndCategorySpecifications(int id)

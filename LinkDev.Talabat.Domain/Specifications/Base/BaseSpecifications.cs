@@ -22,6 +22,11 @@ namespace LinkDev.Talabat.Domain.Specifications.Base
             Criteria = Entity => Entity.Id.Equals(id);
         }
 
+        public BaseSpecifications(Expression<Func<TEntity, bool>> criteria)
+        {
+            Criteria = criteria;
+        }
+
         #region Helper Methods
         private protected virtual void AddSorting(string sort)
         {

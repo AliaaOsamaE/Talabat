@@ -17,9 +17,9 @@ namespace LinkDev.Talabat.APIs.Controller.Controllers.Products
 
         #region GetProducts
         [HttpGet] //Get: /api/products
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProducts(string sort)
+        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProducts(string? sort,int?brandId,int?categoryId)
         {
-            var products = await serviceManager.ProductService.GetProductsAsync(sort);
+            var products = await serviceManager.ProductService.GetProductsAsync(sort,brandId,categoryId);
             return Ok(products);
         }
         #endregion

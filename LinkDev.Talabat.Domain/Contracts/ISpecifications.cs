@@ -11,5 +11,9 @@ namespace LinkDev.Talabat.Domain.Contracts
 
         // Property for including related entities
         public List<Expression<Func<TEntity, object>>> Includes { get; set; }
+
+        public Expression<Func<TEntity, object>>? OrderBy { get; set; }
+
+        public Expression<Func<TEntity, object>>? OrderByDesc { get; set; }
     }
 }

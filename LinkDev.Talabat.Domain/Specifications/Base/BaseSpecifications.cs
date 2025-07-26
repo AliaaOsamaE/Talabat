@@ -7,12 +7,14 @@ namespace LinkDev.Talabat.Domain.Specifications.Base
         where TEntity : BaseEntity<TKey>
         where TKey : IEquatable<TKey>
     {
-        public Expression<Func<TEntity, bool>>? Criteria { get; set; }
-        public List<Expression<Func<TEntity, object>>> Includes { get; set; } = new List<Expression<Func<TEntity, object>>>;
+        public Expression<Func<TEntity, bool>>? Criteria { get; set; } = null;
+        public List<Expression<Func<TEntity, object>>> Includes { get; set; } = new List<Expression<Func<TEntity, object>>>();
+        public Expression<Func<TEntity, object>>? OrderBy { get; set; } = null;
+        public Expression<Func<TEntity, object>>? OrderByDesc { get; set; } = null;
 
         public BaseSpecifications()
         {
-            Criteria = null;
+            // Criteria = null;
         }
 
         public BaseSpecifications(TKey id)
@@ -21,9 +23,22 @@ namespace LinkDev.Talabat.Domain.Specifications.Base
         }
 
         #region Helper Methods
+        private protected virtual void AddSorting(string sort)
+        {
+
+        }
         private protected virtual void AddIncludes()
         {
         }
+
+        private protected virtual void AddOrderBy(Expression<Func<TEntity, object>> OrderBy)
+        {
+        }
+
+        private protected virtual void AddOrderByDesc(Expression<Func<TEntity, object>> OrderByDesc)
+        {
+        }
+
         #endregion
 
     }

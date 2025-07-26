@@ -14,11 +14,23 @@
                 query = query.Where(spec.Criteria);
             }
 
-            if(spec.Includes is not null) 
+
+            if (spec.OrderBy is not null)
+            {
+                query = query.OrderBy(spec.OrderBy);
+            }
+            else if(spec.OrderByDesc is not null)
+            {
+                query = query.OrderByDescending(spec.OrderByDesc);
+            }
+
+
+            if (spec.Includes is not null) 
             {
                 query = spec.Includes.Aggregate(query, (currentQuery, IncludeExpression) => currentQuery.Include(IncludeExpression));
             }
 
+        
 
             return query;
         }

@@ -17,6 +17,8 @@ namespace LinkDev.Talabat.Application
                 options.UseLazyLoadingProxies();
             });
 
+            services.AddScoped<ProductPictureUrlResolver>();
+
             services.AddAutoMapper(Mapper => Mapper.AddProfile(new MappingProfile()));
             //services.AddAutoMapper(Mapper => Mapper.AddProfile<MappingProfile>()));
             //services.AddAutoMapper(typeof(MappingProfile());

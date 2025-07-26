@@ -59,6 +59,7 @@ namespace LinkDev.Talabat.APIs
 
             builder.Services.AddPersistanceServices(builder.Configuration);
             builder.Services.AddApplicationServices();
+
             #endregion
 
             var app = builder.Build();

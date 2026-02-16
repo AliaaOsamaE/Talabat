@@ -14,10 +14,7 @@ This is a Talabat Clone Project built in in Onion Architecture Based on the foll
 </blockquote>
 
 
-<!-- ## Authors
 
-- [@Yousef Osama](https://www.linkedin.com/in/yousef-osama-120033216/)
- -->
 
 ## Features
 <blockquote>
@@ -281,8 +278,8 @@ POST /api/Account/login
 
 ```json
 {
-    "Email": "yousef@gmail.com",
-    "Password": "Yousef2*"
+    "Email": "aliaa@gmail.com",
+    "Password": "aliaa1#"
 }
 ```
 
@@ -294,10 +291,10 @@ POST /api/Account/register
 
 ```json
 {
-    "DisplayName":"yousef",
-    "Email": "yousef@gmail.com",
-    "Password": "Yousef2*",
-    "PhoneNumber": "01552851677"
+    "DisplayName":"aliaa",
+    "Email": "aliaa@gmail.com",
+    "Password": "aliaa1#",
+    "PhoneNumber": "01019364605"
 }
 ```
 
@@ -322,10 +319,10 @@ PUT /api/Account/UpdateCurrentUserAddress
 
 ```json
 {
-    "FirstName": "yousef new",
-    "LastName": "osama new",
-    "street": "42-EltalStreet new",
-    "city": "Warraq-Giza new",
+    "FirstName": "Aliaa new",
+    "LastName": "Osama new",
+    "street": "31-elsakakiny new",
+    "city": "cairo new",
     "country": "Egypt new"
 }
 ```
@@ -361,10 +358,10 @@ POST /api/Orders
     "basketId": "basket1",
     "deliveryMethodId": 1,
     "shippingaddress": {
-        "FirstName": "yousef osama",
-        "LastName": "mohamed",
-        "street": "42-EltalStreet new",
-        "city": "Warraq-Giza new",
+        "FirstName": "Aliaa new",
+        "LastName": "Osama new",
+        "street": "31-elsakakiny new",
+        "city": "cairo new",
         "country": "Egypt new"
     }
 }
@@ -448,18 +445,3 @@ Talabat returns the following status codes in its API:
 
 
 </details>
-
- <h2 align='center'>⭐ Authors ⭐ </h2>
-<!-- readme: collaborators -start -->
-<table align='center'> 
-<tr>
-    <td align="center">
-        <a href="https://github.com/yousefosama654">
-            <img src="https://avatars.githubusercontent.com/u/93356614?v=4" width="100;" alt="yousefosama654"/>
-            <br />
-            <sub><b>Yousef</b></sub>
-        </a>
-    </td></tr>
-</table>
-<!-- readme: collaborators -end -->
-<h2 align='center'>Thank You. 💖 </h2>
